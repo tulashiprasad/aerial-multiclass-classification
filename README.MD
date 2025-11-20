@@ -14,7 +14,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requireents.txt
-cp .sample.env .env  # adjust values as needed
+cp .sample.env .env
 ```
 
 ## Running the API
@@ -25,6 +25,12 @@ python -m uvicorn src.main:app --reload
 ### Health Check
 - `GET /health` → `{ status, app_name, version }`
 
+### Perform Inference
+```bash 
+curl -X POST "http://localhost:8000/api/predict" \
+  -H "Content-Type: multipart/form-data" \
+  -F "file=@path/to/your/image.jpg"
+```
 
 ## Training Your Own Model
 1. Place dataset under `datasets/` (default structure follows YOLO format with `train/`, `valid/`, `test/` subfolders).
@@ -33,3 +39,6 @@ python -m uvicorn src.main:app --reload
    ```bash
    python src/train.py
    ```
+
+## Written Response Questions
+-  The written Response questions are in `assignment/Research_Engineer_Test.pdf` file

@@ -32,18 +32,17 @@ def main():
     data_yaml = dataset_root / "data.yaml"
     create_data_yaml(dataset_root, data_yaml)
 
-    # You can change to yolov8s-seg.pt / yolov8m-seg.pt if you have more GPU.
     model = YOLO("yolov8n-seg.pt")
 
     results = model.train(
-        data=str(data_yaml),   # path to data.yaml
-        imgsz=640,             # image size (you can try 832 or 1024 if GPU allows)
-        epochs=100,            # number of epochs
-        batch=16,              # batch size (reduce if you get OOM)
-        workers=4,             # dataloader workers
-        project="runs_aerial", # folder where results will be saved
-        name="yolov8n_seg",    # experiment name
-        pretrained=True,       # use pretrained weights
+        data=str(data_yaml),
+        imgsz=640,
+        epochs=100,
+        batch=16,
+        workers=4,
+        project="runs_aerial",
+        name="yolov8n_seg",
+        pretrained=True,
         verbose=True,
     )
 
