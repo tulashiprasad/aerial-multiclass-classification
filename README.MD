@@ -13,9 +13,11 @@ FastAPI service that exposes a YOLOv8 segmentation/classification pipeline for a
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install -r requireents.txt
+pip install -r requirements.txt
 cp .sample.env .env
 ```
+ **Note:**
+*If you encounter any issues related to your CUDA version, please install the PyTorch build that matches your local CUDA setup. Refer to the official PyTorch website for the correct installation command.*
 
 ## Running the API
 ```bash
