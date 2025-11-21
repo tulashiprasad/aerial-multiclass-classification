@@ -17,7 +17,7 @@ pip install -r requirements.txt
 cp .sample.env .env
 ```
  **Note:**
-*If you encounter any issues related to your CUDA version, please install the PyTorch build that matches your local CUDA setup. Refer to the official PyTorch website for the correct installation command.*
+*If you encounter any issues related to your CUDA version, please install the PyTorch build that matches your local CUDA setup*
 
 ## Running the API
 ```bash
